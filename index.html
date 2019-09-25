@@ -1,0 +1,123 @@
+<script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+<div id="app">
+
+			DISPLAY = {{mainBar}}
+
+            <br/>
+            <button v-on:click="mainBar = mainBar + '1'">
+                1
+            </button>
+            <button v-on:click="mainBar = mainBar + '2'">
+                2
+            </button>
+            <button v-on:click="mainBar = mainBar + '3'">
+                3
+            </button>
+            <br/>
+            <button v-on:click="mainBar = mainBar + '4'">
+                4
+            </button>
+            <button v-on:click="mainBar = mainBar + '5'">
+                5
+            </button>
+            <button v-on:click="mainBar = mainBar + '6'">
+                6
+            </button>
+            <br/>
+            <button v-on:click="mainBar = mainBar + '7'">
+                7
+            </button>
+            <button v-on:click="mainBar = mainBar + '8'">
+                8
+            </button>
+            <button v-on:click="mainBar = mainBar + '9'">
+                9
+            </button>
+            <br/>
+
+            <button v-on:click="mainBar = mainBar + '0'">
+                0
+            </button>
+
+            
+
+            <button v-on:click="add()">    
+                +
+            </button>
+
+            <button v-on:click="subtract()">
+                -
+            </button>
+            <br/>
+            <button v-on:click="divide()">
+                /
+            </button>
+            <button v-on:click="multiply()" >
+                *
+            </button>
+            <button v-on:click="result()">
+                =
+            </button>
+            <br/>
+            <button v-on:click="clear()">
+                Clear
+            </button>
+            <!-- <button v-on:click="back()">
+                Back
+            </button> -->
+</div>
+
+<script>
+
+new Vue({
+  el: '#app',
+  data: {
+    mainBar:''
+  },
+  methods:{
+      result : function(){
+        this.mainBar = eval(this.mainBar);
+      },
+      clear : function(){
+          this.mainBar = '' ;
+      },
+      add : function(){
+            if(this.mainBar[this.mainBar.length - 1] != '+' & this.mainBar[this.mainBar.length - 1] != '-' & this.mainBar[this.mainBar.length - 1] != '*' & this.mainBar[this.mainBar.length - 1] != '/' )  
+                {
+                    this.mainBar = this.mainBar + '+';
+                }  
+            else {
+                this.mainBar = this.mainBar + '';
+            }    
+      },
+      subtract : function(){
+            if(this.mainBar[this.mainBar.length - 1] != '+' & this.mainBar[this.mainBar.length - 1] != '-' & this.mainBar[this.mainBar.length - 1] != '*' & this.mainBar[this.mainBar.length - 1] != '/')  
+                {
+                    this.mainBar = this.mainBar + '-';
+                }  
+            else {
+                this.mainBar = this.mainBar + '';
+            }    
+      },
+      multiply : function(){
+            if(this.mainBar[this.mainBar.length - 1] != '+' & this.mainBar[this.mainBar.length - 1] != '-' & this.mainBar[this.mainBar.length - 1] != '*' & this.mainBar[this.mainBar.length - 1] != '/')  
+                {
+                    this.mainBar = this.mainBar + '*';
+                }  
+            else {
+                this.mainBar = this.mainBar + '';
+            }    
+      },
+      divide : function(){
+            if(this.mainBar[this.mainBar.length - 1] != '+' & this.mainBar[this.mainBar.length - 1] != '-' & this.mainBar[this.mainBar.length - 1] != '*' & this.mainBar[this.mainBar.length - 1] != '/')  
+                {
+                    this.mainBar = this.mainBar + '/';
+                }  
+            else {
+                this.mainBar = this.mainBar + '';
+            }    
+      },
+  }
+});
+
+</script>
